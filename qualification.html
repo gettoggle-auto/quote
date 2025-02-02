@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5dc3a1;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #64E3AE;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #3b4a56;
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .question-box {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .options button {
+            background-color: #74d3ae;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .options button:hover {
+            background-color: #52b088;
+        }
+
+        #form-container {
+            display: none;
+        }
+
+        #redirect-message {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+
+        footer {
+            background-color: #3b4a56;
+            color: white;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.postimg.cc/CMDBGT2R/descarga-4.png" alt="Toggle Logo" width="80">
+    </header>
+
+    <div class="content">
+        <div id="question-container">
+            <p class="question-box" id="question-text">Do you currently have insurance?</p>
+            <div class="options">
+                <button onclick="nextQuestion('Yes')">Yes</button>
+                <button onclick="nextQuestion('No')">No</button>
+            </div>
+        </div>
+
+        <div id="form-container">
+            <h2>Congratulations! 🎉</h2>
+            <p>We can help improve your current insurance and handle everything for you.</p>
+            <p>Fill out the form to receive your evaluation via email.</p>
+          <img src="https://i.postimg.cc/9M0Pm8XG/Whats-App-Image-2025-02-02-at-14-53-51.jpg" width="200">
+        </div>
+
+        <p id="redirect-message">We will redirect you to the form— we’ll only ask for your full name and email. ... <span id="countdown">3</span></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Farmers Group, Inc. All rights reserved.</p>
+        <p>Advertisement produced on behalf of specific insurers domiciled in Los Angeles, CA. Insurance is underwritten by Toggle Insurance Company or affiliates.</p>
+        <p>Each insurer has sole financial responsibility for its own insurance.</p>
+        <p>Not all insurers are authorized in all states. Coverages and discounts may vary by state.</p>
+    </footer>
+
+    <script>
+        const questions = [
+            "Do you currently have insurance?",
+            "How much are you currently paying per month?",
+            "Is your pet insured?"
+        ];
+
+        const options = [
+            ["Yes", "No"],
+            ["Less than $200/month", "More than $200/month"],
+            ["Yes", "No"]
+        ];
+
+        let currentQuestion = 0;
+
+        function nextQuestion(answer) {
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                document.getElementById("question-text").innerText = questions[currentQuestion];
+                let buttons = document.querySelector(".options");
+                buttons.innerHTML = options[currentQuestion].map(opt => `<button onclick="nextQuestion('${opt}')">${opt}</button>`).join("");
+            } else {
+                document.getElementById("question-container").style.display = "none";
+                document.getElementById("form-container").style.display = "block";
+                showRedirectMessage();
+            }
+        }
+
+        function showRedirectMessage() {
+            document.getElementById("redirect-message").style.display = "block";
+            let countdown = 3;
+            let countdownElement = document.getElementById("countdown");
+
+            let interval = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+
+                if (countdown === 0) {
+                    clearInterval(interval);
+                    window.location.href = "https://afflat3c2.com/trk/lnk/28799011-698C-4AFC-B6B3-9B5E811EFE18/?o=28448&c=918277&a=748206&k=79D6B19099CC222C1AA180CDACDA9049&l=31414";
+                }
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
